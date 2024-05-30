@@ -1,14 +1,7 @@
-import { useState } from 'react';
+import { useCounter } from '../hooks';
 
 export function Counter() {
-  const [counter, setCounter] = useState(0);
-
-  const add = () => {
-    setCounter((prev) => prev + 1);
-  };
-  const sub = () => {
-    setCounter((prev) => (prev > 0 ? prev - 1 : 0));
-  };
+  const { add, counter, sub } = useCounter({});
   return (
     <>
       <h3>
